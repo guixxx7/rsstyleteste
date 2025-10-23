@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body> 
+
+    <div class="logo">
+        <img src="imagens/reinostyle.png" alt="Reino Style" class="logo-img">
+        <h1>Reino Style</h1>
+        <h2>Isaías 43:13</h2>
+        <h3>Insira seus dados</h3>
+    </div>
+
+    <main class="container"> 
+        <form id="loginForm">
+            <div class="input-box">
+                <input id="usuario" placeholder="Usuário" type="email">
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box">
+                <input id="senha" placeholder="Senha" type="password">
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+        
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox"> Lembrar Senha <a href="#">Esqueci a Senha</a>
+                </label>
+            </div>
+
+            <div class="register-link">
+                <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+            </div>
+
+            <button type="submit" id="loginBtn">Login</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Kauan Guilherme</p>
+    </footer>
+
+    <script>
+        // Captura o evento de envio do formulário
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio automático
+    
+            const usuario = document.getElementById("usuario").value.trim();
+            const senha = document.getElementById("senha").value.trim();
+    
+            if (usuario === "" || senha === "") {
+                alert("Por favor, preencha todos os campos!");
+            } else {
+                window.location.href = "produtos.html";
+            }
+        });
+    
+        // ===== MOSTRAR / OCULTAR SENHA =====
+        const checkbox = document.querySelector('.remember-forgot input[type="checkbox"]');
+        const campoSenha = document.getElementById("senha");
+    
+        checkbox.addEventListener("change", function() {
+            if (this.checked) {
+                campoSenha.type = "text"; // Mostra a senha
+            } else {
+                campoSenha.type = "password"; // Oculta a senha
+            }
+
+              // Captura o evento de envio do formulário
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio automático
+
+            // Pega os valores dos campos
+            const usuario = document.getElementById("usuario").value.trim();
+            const senha = document.getElementById("senha").value.trim();
+
+            // Verifica se estão preenchidos
+            if (usuario === "" || senha === "") {
+                alert("Por favor, preencha todos os campos!");
+            } else {
+                // Redireciona para a próxima página
+                window.location.href = "produtos.html";
+
+            }
+        });
+
+        });
+    </script>
+    
+</body>
+</html>
